@@ -34,6 +34,6 @@ class ArticleController extends Controller
      */
     public function show($id, ArticleTransformer $transformer)
     {
-        return $transformer->transform($this->article->find($id));
+        return response()->json($transformer->transform($this->article->find($id)));
     }
 }
