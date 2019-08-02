@@ -18,17 +18,13 @@ class ArticlesByCategory extends BaseQuery
      * @param array $params
      * @return Builder
      */
-    public function execute(array $params): Builder
+    public function query(array $params): Builder
     {
-        try {
-            return \DB::table('article_category')
-                ->select('articles.*')
-                ->join('categories', 'category_id', '=', 'categories.id')
-                ->join('articles', 'article_id', '=', 'articles.id')
-                ->where('category_id', $params['id']);
-        } catch(\OutOfBoundsException $e) {
-            throw new QueryInvalidArgumentException('Required params for query not provided');
-        }
+        return \DB::table('article_category')
+            ->select('articles.*')
+            ->join('categories', 'category_id', '=', 'categories.id')
+            ->join('articles', 'article_id', '=', 'articles.id')
+            ->where('category_id', $params['id']);
     }
 
 }
