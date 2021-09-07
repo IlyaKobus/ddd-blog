@@ -54,7 +54,7 @@ abstract class BaseRepository implements IRepository
     {
         $result = \DB::table($this->model)->find($id);
 
-        if(null === $result) {
+        if($result === null) {
             throw new ModelNotFoundException();
         }
 
