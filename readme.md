@@ -1,6 +1,6 @@
 ## About Project
 
-This is a scratch of simple DDD development project.
+This is a scratch of simple DDD following project.
 
 ### Application
 
